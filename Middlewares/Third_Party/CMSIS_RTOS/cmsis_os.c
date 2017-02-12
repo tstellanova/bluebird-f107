@@ -101,7 +101,9 @@
 
 extern void xPortSysTickHandler(void);
 
-//TODO the following crap only allows us to craeate one static task
+
+uint8_t _task_alloc_index = 0;
+#define MAX_STATIC_TASKS  8
 
 /* Dimensions the buffer that the task being created will use as its stack.
   NOTE:  This is the number of words the stack will hold, not the number of
@@ -110,12 +112,12 @@ extern void xPortSysTickHandler(void);
 #define TASK_STACK_SIZE 200
 
 /* Structure that will hold the TCB of the task being created. */
-StaticTask_t _xTaskBuffer;
+StaticTask_t _xTaskBuffers[MAX_STATIC_TASKS] = {0};
 
 /* Buffer that the task being created will use as its stack.  Note this is
 an array of StackType_t variables.  The size of StackType_t is dependent on
 the RTOS port. */
-StackType_t _xStack[ TASK_STACK_SIZE ];
+StackType_t _xStacks[MAX_STATIC_TASKS][ TASK_STACK_SIZE ] = {0};
 
 
 /* Convert from CMSIS type osPriority to FreeRTOS priority number */
@@ -222,20 +224,18 @@ osThreadId osThreadCreate (const osThreadDef_t *thread_def, void *argument)
 {
   TaskHandle_t handle = NULL;
 
-  //TODO this crappy hack only allows one thread to be created
-  handle = xTaskCreateStatic((TaskFunction_t)thread_def->pthread,
-                    (const portCHAR *)thread_def->name,
-                    thread_def->stacksize,
-                    argument,
-                    makeFreeRtosPriority(thread_def->tpriority),
-                             _xStack,
-                             &_xTaskBuffer);
+  //TODO this implementation assumes we never release tasks
+  if (_task_alloc_index < MAX_STATIC_TASKS) {
+    handle = xTaskCreateStatic((TaskFunction_t) thread_def->pthread,
+                               (const portCHAR *) thread_def->name,
+                               thread_def->stacksize,
+                               argument,
+                               makeFreeRtosPriority(thread_def->tpriority),
+                               _xStacks[_task_alloc_index],
+                               &_xTaskBuffers[_task_alloc_index]);
 
-//  if (xTaskCreate((TaskFunction_t)thread_def->pthread,(const portCHAR *)thread_def->name,
-//              thread_def->stacksize, argument, makeFreeRtosPriority(thread_def->tpriority),
-//              &handle) != pdPASS)  {
-//    return NULL;
-//  }
+    _task_alloc_index++;
+  }
   
   return handle;
 }
