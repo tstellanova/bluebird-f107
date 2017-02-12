@@ -41,19 +41,18 @@
   ******************************************************************************
   */
 /* Includes ------------------------------------------------------------------*/
-#include <unistd.h>
 #include "main.h"
 #include "stm32f1xx_hal.h"
 #include "cmsis_os.h"
 #include "can.h"
 #include "i2c.h"
-#include "spi.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "stm32f107_viewtool.h"
 
 /* USER CODE BEGIN Includes */
+
+#include "stm32f107_viewtool.h"
 
 /* USER CODE END Includes */
 
@@ -104,7 +103,6 @@ int main(void)
   MX_CAN1_Init();
   MX_CAN2_Init();
   MX_I2C1_Init();
-  MX_SPI1_Init();
   MX_TIM3_Init();
   MX_USART1_UART_Init();
   MX_TIM6_Init();

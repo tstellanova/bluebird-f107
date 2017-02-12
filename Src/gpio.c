@@ -43,9 +43,9 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include <stm32f107_viewtool.h>
 #include "gpio.h"
 /* USER CODE BEGIN 0 */
+#include "stm32f107_viewtool.h"
 
 /* USER CODE END 0 */
 
@@ -71,7 +71,6 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
-
 
   GPIO_Config_LEDs();
 

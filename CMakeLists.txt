@@ -36,8 +36,8 @@ set(SOURCE_FILES
     Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
     Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
     Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
-    Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c
-    Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c
+#    Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c
+#    Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c
     Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
     Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
     Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
@@ -50,13 +50,13 @@ set(SOURCE_FILES
     Middlewares/Third_Party/FreeRTOS/Source/queue.c
     Middlewares/Third_Party/FreeRTOS/Source/tasks.c
     Middlewares/Third_Party/FreeRTOS/Source/timers.c
-        BSP/VIEWTOOL_F107/stm32f107_viewtool.c
+    BSP/VIEWTOOL_F107/stm32f107_viewtool.c
     Src/can.c
     Src/freertos.c
     Src/gpio.c
     Src/i2c.c
     Src/main.c
-    Src/spi.c
+#    Src/spi.c
     Src/stm32f1xx_hal_msp.c
     Src/stm32f1xx_hal_timebase_TIM.c
     Src/stm32f1xx_it.c
