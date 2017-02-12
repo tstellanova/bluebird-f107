@@ -91,6 +91,10 @@ static void GPIO_Config_LEDs(void)
 
   BSP_LED_Init(LED1);
   BSP_LED_Init(LED2);
+
+  BSP_LED_Off(LED1);
+  BSP_LED_Off(LED2);
+
 }
 
 /* USER CODE END 2 */
