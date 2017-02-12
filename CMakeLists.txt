@@ -64,7 +64,7 @@ set(SOURCE_FILES
     Src/tim.c
     Src/usart.c
     startup/startup_stm32f107xc.s
-    )
+        Src/can_reader_task.c)
 
 add_executable(bluebird ${SOURCE_FILES})
 

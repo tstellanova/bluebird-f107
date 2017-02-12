@@ -46,7 +46,10 @@
 #include "task.h"
 #include "cmsis_os.h"
 
-/* USER CODE BEGIN Includes */     
+/* USER CODE BEGIN Includes */
+
+#include <stm32f107xc.h>
+#include "can_reader_task.h"
 
 /* USER CODE END Includes */
 
@@ -55,14 +58,18 @@ osThreadId defaultTaskHandle;
 
 /* USER CODE BEGIN Variables */
 
+osThreadId _can1ReaderTaskH;
+
 /* USER CODE END Variables */
 
 /* Function prototypes -------------------------------------------------------*/
-void StartDefaultTask(void const * argument);
+static void StartDefaultTask(void const * arg);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* USER CODE BEGIN FunctionPrototypes */
+
+static void StartCan1ReaderTask(void const * arg);
 
 /* USER CODE END FunctionPrototypes */
 
@@ -94,6 +101,10 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+
+  osThreadDef(can1ReaderTask, StartCan1ReaderTask, osPriorityNormal, 0, 128);
+  _can1ReaderTaskH = osThreadCreate(osThread(can1ReaderTask), NULL);
+
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
@@ -102,7 +113,7 @@ void MX_FREERTOS_Init(void) {
 }
 
 /* StartDefaultTask function */
-void StartDefaultTask(void const * argument)
+static void StartDefaultTask(void const * arg)
 {
 
   /* USER CODE BEGIN StartDefaultTask */
@@ -115,6 +126,11 @@ void StartDefaultTask(void const * argument)
 }
 
 /* USER CODE BEGIN Application */
+
+void StartCan1ReaderTask(void const * argument)
+{
+  can_reader_task_main(CAN1);
+}
 
 
 /* configSUPPORT_STATIC_ALLOCATION is set to 1, so the application must provide an
