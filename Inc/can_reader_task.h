@@ -7,11 +7,13 @@
 
 #include <stdint.h>
 
+#include "can.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void can_reader_task_main(CAN_TypeDef* canRef);
+void can_reader_task_main(CAN_HandleTypeDef* canHandle);
 
 
 #ifdef __cplusplus

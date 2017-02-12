@@ -129,7 +129,7 @@ static void StartDefaultTask(void const * arg)
 
 void StartCan1ReaderTask(void const * argument)
 {
-  can_reader_task_main(CAN1);
+  can_reader_task_main(&hcan1);
 }
 
 
