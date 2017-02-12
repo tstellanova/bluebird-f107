@@ -53,7 +53,6 @@
 /* Configure GPIO                                                             */
 /*----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
-static void GPIO_Config_LEDs(void);
 
 /* USER CODE END 1 */
 
@@ -67,34 +66,30 @@ static void GPIO_Config_LEDs(void);
 void MX_GPIO_Init(void)
 {
 
+  GPIO_InitTypeDef GPIO_InitStruct;
+
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
-  GPIO_Config_LEDs();
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : PA6 PA7 */
+  GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 }
 
 /* USER CODE BEGIN 2 */
 
-static void GPIO_Config_LEDs(void)
+ void GPIO_Config_LEDs(void)
 {
-  GPIO_InitTypeDef gpioInit = {0};
-
-  // LED1 -> PA6
-  // LED2 -> PA7
-  gpioInit.Pin  = GPIO_PIN_6 | GPIO_PIN_7 ;
-  gpioInit.Mode = GPIO_MODE_OUTPUT_PP;
-  gpioInit.Speed = GPIO_SPEED_HIGH;
-  HAL_GPIO_Init(GPIOA, &gpioInit);
-
-  BSP_LED_Init(LED1);
-  BSP_LED_Init(LED2);
-
   BSP_LED_Off(LED1);
   BSP_LED_Off(LED2);
-
 }
 
 /* USER CODE END 2 */

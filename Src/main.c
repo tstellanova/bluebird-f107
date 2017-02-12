@@ -110,6 +110,8 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 
+  GPIO_Config_LEDs();
+
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
@@ -216,10 +218,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler */
-  /* User can add his own implementation to report the HAL error return state */
-//    BSP_LED_On(LED3);
 
-    while(1)
+  BSP_LED_On(LED2);
+  while(1)
   {
   }
   /* USER CODE END Error_Handler */ 
