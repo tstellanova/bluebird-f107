@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/startup/startup_stm32f107xc.s" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LinkerScript.ld" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/system_stm32f1xx.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/main.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/usart.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/stm32f1xx_hal_timebase_TIM.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/spi.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/gpio.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/can.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/i2c.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/freertos.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/tim.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/stm32f1xx_hal_msp.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/stm32f1xx_it.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/timers.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/queue.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/list.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/croutine.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/CMSIS_RTOS/cmsis_os.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/CMSIS_RTOS/cmsis_os.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BSP/VIEWTOOL_F107/stm32f107_viewtool.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BSP/VIEWTOOL_F107/stm32f107_viewtool.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/xcompile.cmake" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include-fixed" />
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include" />
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/arm-none-eabi/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include-fixed" />
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include" />
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/arm-none-eabi/include" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
