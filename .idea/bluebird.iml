@@ -2,40 +2,71 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan_drivers/stm32/driver/src/uc_stm32_can.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan_drivers/stm32/driver/src/libstubs.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan_drivers/stm32/driver/src/uc_stm32_thread.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan_drivers/stm32/driver/src/uc_stm32_clock.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/protocol/uc_dynamic_node_id_client.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/protocol/uc_node_status_provider.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/marshal/uc_bit_stream.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/marshal/uc_scalar_codec.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/marshal/uc_bit_array_copy.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/marshal/uc_float_spec.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/driver/uc_can.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/uc_data_type.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/node/uc_service_client.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/node/uc_timer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/node/uc_scheduler.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/node/uc_generic_subscriber.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/node/uc_generic_publisher.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/node/uc_global_data_type_registry.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/uc_error.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/uc_dynamic_memory.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_transfer_listener.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_crc.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_transfer_buffer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_transfer_receiver.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_outgoing_transfer_registry.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_dispatcher.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_frame.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_transfer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_can_acceptance_filter_configurator.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_can_io.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libuavcan/libuavcan/src/transport/uc_transfer_sender.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/startup/startup_stm32f107xc.s" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/LinkerScript.ld" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/can_reader_task.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Src/system_stm32f1xx.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Src/main.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Src/usart.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/tim.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Src/stm32f1xx_hal_timebase_TIM.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Src/can.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Src/gpio.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Src/tim.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Src/freertos.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Src/i2c.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Src/can_reader_task.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Src/stm32f1xx_hal_msp.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Src/stm32f1xx_it.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/usart.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/stm32f1xx_hal_msp.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Src/i2c.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/timers.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/queue.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/list.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/list.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FreeRTOS/Source/croutine.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/CMSIS_RTOS/cmsis_os.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/CMSIS_RTOS/cmsis_os.c" isTestSource="false" />
@@ -48,14 +79,14 @@
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
-          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include-fixed" />
-          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include" />
           <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/arm-none-eabi/include" />
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include" />
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include-fixed" />
         </CLASSES>
         <SOURCES>
-          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include-fixed" />
-          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include" />
           <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/arm-none-eabi/include" />
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include" />
+          <root url="file:///usr/local/Cellar/gcc-arm-none-eabi/20160928/lib/gcc/arm-none-eabi/5.4.1/include-fixed" />
         </SOURCES>
       </library>
     </orderEntry>

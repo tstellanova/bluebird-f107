@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
-project(bluebird  C ASM)
+project(bluebird CXX C ASM)
 
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -20,8 +20,56 @@ include_directories(Middlewares/Third_Party/FreeRTOS/Source/include)
 include_directories(Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3)
 include_directories(Middlewares/Third_Party/CMSIS_RTOS)
 
-# ViewTool F107 BSP
+# ViewTool Ficus F107 BSP
 include_directories(BSP/VIEWTOOL_F107)
+
+# libuavcan
+include_directories(libuavcan/libuavcan/include)
+include_directories(libuavcan/libuavcan/include/dsdlc_generated)
+include_directories(libuavcan/libuavcan_drivers/stm32/driver/include)
+
+
+add_definitions(-DUAVCAN_PLATFORM=stm32)
+add_definitions(-DUAVCAN_STM32_FREERTOS=1)
+add_definitions(-DUAVCAN_STM32_NUM_IFACES=1) # TODO make 2
+#add_definitions(-DUAVCAN_USE_EXTERNAL_SNPRINTF=1)
+
+add_definitions(-DUAVCAN_STM32_TIMER_NUMBER=3) # TODO check this TIM
+
+set(UAVCAN_FILES
+        libuavcan/libuavcan/src/driver/uc_can.cpp
+        libuavcan/libuavcan/src/marshal/uc_bit_array_copy.cpp
+        libuavcan/libuavcan/src/marshal/uc_bit_stream.cpp
+        libuavcan/libuavcan/src/marshal/uc_float_spec.cpp
+        libuavcan/libuavcan/src/marshal/uc_scalar_codec.cpp
+        libuavcan/libuavcan/src/node/uc_generic_publisher.cpp
+        libuavcan/libuavcan/src/node/uc_generic_subscriber.cpp
+        libuavcan/libuavcan/src/node/uc_global_data_type_registry.cpp
+        libuavcan/libuavcan/src/node/uc_scheduler.cpp
+        libuavcan/libuavcan/src/node/uc_service_client.cpp
+        libuavcan/libuavcan/src/node/uc_timer.cpp
+        libuavcan/libuavcan/src/protocol/uc_dynamic_node_id_client.cpp
+        libuavcan/libuavcan/src/protocol/uc_node_status_provider.cpp
+        libuavcan/libuavcan/src/transport/uc_can_acceptance_filter_configurator.cpp
+        libuavcan/libuavcan/src/transport/uc_can_io.cpp
+        libuavcan/libuavcan/src/transport/uc_crc.cpp
+        libuavcan/libuavcan/src/transport/uc_dispatcher.cpp
+        libuavcan/libuavcan/src/transport/uc_frame.cpp
+        libuavcan/libuavcan/src/transport/uc_outgoing_transfer_registry.cpp
+        libuavcan/libuavcan/src/transport/uc_transfer.cpp
+        libuavcan/libuavcan/src/transport/uc_transfer_buffer.cpp
+        libuavcan/libuavcan/src/transport/uc_transfer_listener.cpp
+        libuavcan/libuavcan/src/transport/uc_transfer_receiver.cpp
+        libuavcan/libuavcan/src/transport/uc_transfer_sender.cpp
+        libuavcan/libuavcan/src/transport/uc_outgoing_transfer_registry.cpp
+        libuavcan/libuavcan/src/uc_data_type.cpp
+        libuavcan/libuavcan/src/uc_dynamic_memory.cpp
+        libuavcan/libuavcan/src/uc_error.cpp
+
+        libuavcan/libuavcan_drivers/stm32/driver/src/uc_stm32_can.cpp
+        libuavcan/libuavcan_drivers/stm32/driver/src/uc_stm32_clock.cpp
+        libuavcan/libuavcan_drivers/stm32/driver/src/uc_stm32_thread.cpp
+        libuavcan/libuavcan_drivers/stm32/driver/src/libstubs.cpp)
 
 set(SOURCE_FILES
     Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
@@ -64,11 +112,11 @@ set(SOURCE_FILES
     Src/tim.c
     Src/usart.c
     startup/startup_stm32f107xc.s
-        Src/can_reader_task.c)
+        Src/can_reader_task.cpp)
 
-add_executable(bluebird ${SOURCE_FILES})
+add_executable(bluebird ${SOURCE_FILES} ${UAVCAN_FILES})
 
-add_executable(${PROJECT_NAME}.elf ${SOURCE_FILES} ${LINKER_SCRIPT})
+add_executable(${PROJECT_NAME}.elf ${UAVCAN_FILES} ${SOURCE_FILES} ${LINKER_SCRIPT})
 
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-Map=${PROJECT_SOURCE_DIR}/build/${PROJECT_NAME}.map")
 set(HEX_FILE ${PROJECT_SOURCE_DIR}/build/${PROJECT_NAME}.hex)
